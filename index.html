@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lfs87opAAAAAJzfXTqtd7eWUOI3eGCK-1lNE6ma"></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://kit.fontawesome.com/e50e7d169d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Gaming Multi-step form</title>
+    <link rel="stylesheet" href="assets\css\style.css" />
+    <script src="assets\javascripts\app.js" defer></script>
+  </head>
+  <body>
+
+
+    <div id="locationModal" class="modal">
+      <div class="modalcontent">
+        <h2 class="allow">Allow Location Access</h2>
+        <p class="allowpara">This website would like to access your location to provide personalized services. Would you like to allow it?</p>
+        <button id="allowLocationBtn">Allow</button>
+        <button id="denyLocationBtn">Deny</button>
+      </div>
+    </div>
+    <div class="form">
+      <div class="formcontainer">
+        <!-- Sidebar start -->
+        <div class="formsidebar">
+          <div class="step active">
+            <div class="circle">1</div>
+            <div class="stepcontent">
+              <span>Step 1</span>
+              <b>Your info</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <div class="stepcontent">
+              <span>Step 2</span>
+              <b>Select plan</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <div class="stepcontent">
+              <span>Step 3</span>
+              <b>Add-ons</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">4</div>
+            <div class="stepcontent">
+              <span>Step 4</span>
+              <b>Summary</b>
+            </div>
+          </div>
+        </div>
+        <!-- Sidebar end -->
+        <!-- * Step 1 start -->
+        <div class="stp step1">
+          <div class="header">
+            <h1 class="title">Personal info</h1>
+            <p class="exp">
+              Please provide your name, email address, and phone number.
+            </p>
+          </div>
+          <form>
+            <div class="label">
+              <label for="name">Name</label>
+              <p class="error" id="errorempty">This Field Is Required</p>
+            </div>
+            <input
+              required
+              type="text"
+              id="name"
+              placeholder="e.g. Stephen King"
+              oninput="removeerr('name', 'nameError')"
+            />
+            <div class="" id="usernameError">	 <i class="fa-solid fa-triangle-exclamation"></i>
+              Username should not be empty and contain non numeric input </div>
+            
+            <div class="label">
+              <label for="email">Email Address</label>
+              <p class="error" id="errorempty">This Field Is Required</p>
+            </div>
+            <input
+              required
+              type="text"
+              id="email"
+              placeholder="e.g. stephenking@lorem.com"
+              oninput="removeerr('email', 'emailError')"
+            />
+            <div class="" id="emailError"><i class="fa-solid fa-triangle-exclamation"></i>Email  should not be empty and in valid format.</div>
+
+            <div class="label">
+              <label for="phone">Phone Number</label>
+              <p class="error" id="errorempty">This Field Is Required</p>
+            </div>
+            <input
+              required
+              type="tel"
+              id="phone"
+              placeholder="e.g. +1 234 567 890"
+              maxlength="10"
+              onfocus="removeerr('phone', 'phoneError')"
+
+            />
+            <div class="" id="phoneError"><i class="fa-solid fa-triangle-exclamation"></i>Phone number should not be empty and should contain exactly ten numbers.</div>
+            <div class="label">
+              <label for="image">Image</label>
+              <p class="error" id="errorone">This Field Is Required</p>
+            </div>
+            <input
+              required
+              type="file"
+              id="image"
+              placeholder="upload image"
+              style="padding-top: 1.1rem;"
+            />
+            <div class="" id="imageError">	 <i class="fa-solid fa-triangle-exclamation"></i>
+              File must be uploaded </div>
+
+          </form>
+          <!-- <div class="g-recaptcha" data-sitekey="6Lfs87opAAAAAJzfXTqtd7eWUOI3eGCK-1lNE6ma"></div> -->
+
+          <!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> -->
+          <div class="btns">
+            <button class="nextstp" type="submit" style="margin-top: 1rem;">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 1 end -->
+        <!-- * Step 2 start -->
+        <div class="stp step2">
+          <div class="header">
+            <h1 class="title">Select your plan</h1>
+            <p class="exp">You have the option of monthly or yearly billing.</p>
+          </div>
+          <form>
+            <div class="plancard selected">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade" />
+              <div class="planinfo chosen">
+                <b>Arcade</b>
+                <span class="planpriced">$9/mo</span>
+              </div>
+            </div>
+            <div class="plancard">
+              <img src="./assets/images/icon-advanced.svg" alt="arcade" />
+              <div class="planinfo">
+                <b>Advanced</b>
+                <span class="planpriced">$12/mo</span>
+              </div>
+            </div>
+            <div class="plancard">
+              <img src="./assets/images/icon-pro.svg" alt="arcade" />
+              <div class="planinfo">
+                <b>Pro</b>
+                <span class="planpriced">$15/mo</span>
+              </div>
+            </div>
+          </form>
+          <div class="switcher">
+            <p class="monthly sw-active">Monthly</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <p class="yearly">Yearly</p>
+          </div>
+          <div class="btns">
+            <button class="prevstp" type="button">Go Back</button>
+            <button class="nextstp" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 2 end -->
+        <!-- * Step 3 start -->
+        <div class="stp step3">
+          <div class="header">
+            <h1 class="title">Choose Extra Features</h1>
+            <p class="exp">Improve your gaming experience.</p>
+          </div>
+          <form id="checkboxForm">
+            <div class="box" data-id="1">
+            <input type="checkbox" id="online" />
+             
+              <label for="online"></label>
+              <div class="description">
+                <label for="online">Online service</label>
+                <small>Access to multiplayer games</small>
+              </div>
+              <p class="price">+$1/mo</p>
+            </div>
+            <div class="box" data-id="2">
+              <input type="checkbox" id="larger" />
+              <div class="description">
+                <label for="larger">Larger storage</label>
+                <small>Extra 1TB storage </small>
+              </div>
+              <p class="price">+$2/mo</p>
+            </div>
+            <div class="box" data-id="3">
+              <input type="checkbox" id="profile" />
+              <div class="description">
+                <label for="profile">VIP Membership</label>
+                <small>Access to VIP events</small>
+              </div>
+              <p class="price">+$2/mo</p>
+            </div>
+          </form>
+          <div class="btns">
+            <button class="prevstp" type="button">Go Back</button>
+            <button class="nextstp" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 3 end -->
+        <!-- * Step 4 start -->
+        <div class="stp step4">
+          <div class="header">
+            <h1 class="title">Finishing up</h1>
+            <p class="exp">
+              Double-check everything before confirming.
+            </p>
+          </div>
+          <div class="selectionbox">
+            <div class="selectioncontainer">
+              <div class="selectedplan">
+                <p class="planname">Arcade(Monthly)</p>
+                <p class="planprice">$9/mo</p>
+              </div>
+              <hr />
+              <div class="addons">
+                <template>
+                  <div class="selectedaddon">
+                    <span class="servicename">Online service</span>
+                    <span class="servicprice">+$1/mo</span>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <p class="total">Total (per month) <b>+$12/mo</b></p>
+          </div>
+          <div class="btns">
+            <button class="prevstp" type="button">Go Back</button>
+            <button class="nextstp" id="submitbutton" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- Step 4 end -->
+        <!-- Step 5 start -->
+        <div class="stp step5">
+          <img src="./assets/images/icon-thank-you.svg" alt="" />'
+          
+          <div>Thank you for making purchase with us .Your profile Detais:-</div>
+          <div class="finalsubit"> 
+            <h2 class="finalsubmitheading">Name: <span id="displayName"></span></h2>
+            <h2 class="finalsubmitheading">Email: <span id="displayEmail"></span></h2>
+            <h2 class="finalsubmitheading">Phone: <span id="displayPhone"></span></h2>
+            <img src="" class="image" style="width: 50% " alt="">
+          </div>
+          <button class="nextstp"></button>
+        </div>
+        <!-- Step 5 end -->
+        
+        <!-- yoo 6 e -->
+      </div>
+    </div>
+  </body>
+</html>
