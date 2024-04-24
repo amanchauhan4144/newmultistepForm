@@ -25,17 +25,7 @@ This is an assignment related to multi step form in javascript .
 2. In second page there is a choice of selecting from multiple plans . 
 3. In third page there is a checkbox form to select from multiple fields.
 4. In fourth page the order price calculation is done based on the purchase .
-5. In fifth page a thank you message is printed .
-
-
-some photos -> 
-
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-
-
-
+5. In fifth page a thank you message along with details and a photo which was uploaded  is printed .
 
 
 # How to run->
